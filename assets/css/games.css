@@ -1,0 +1,129 @@
+table,
+th,
+td {
+    border: 5px solid black;
+}
+
+.ranking,
+.game-title,
+.game-info {
+    text-align: center;
+}
+
+.game-info {
+    display: flex;
+    gap: 20px
+}
+
+.game-info img {
+    width: 500px;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.game-info p {
+    flex: 1;
+    min-width: 0;
+}
+
+div {
+    img {
+        margin-left: 1%;
+        margin-bottom: 1%;
+    }
+
+    p {
+        margin-right: 1%;
+    }
+}
+
+table {
+    width: 65%;
+}
+
+.table-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#nav-bar {
+    /* flex display makes children (nav-links) line up horizontally*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    /*
+        flex display makes children (li elements) line up horizontally 
+        also allows you to control their spacing and sizing 
+    */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    /* 
+        by default, <a> tags are inline, so only their text is clickable
+        block display makes the entire area of the <a> (including padding and 
+        full width of it's parent <li>) clickable, not just the text
+    
+    */
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    transition: transform 0.2s ease-in-out
+        /* makes the nav bar link growth smooth */
+}
+
+
+nav a[aria-current="page"] {
+    color: #007bff;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+}
+
+.nav-links li {
+    /* grow and fill avilable space equally, spreading across nav bar */
+    flex: 1;
+    /* force list items to be wide*/
+    display: inline-block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li a:hover {
+    transform: scale(1.1);
+    /* increases size to 110% as you hover */
+    background-color: rgb(211, 211, 211);
+    font-weight: bold;
+}
+
+/* .nav-links li+li {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: 15px;
+    padding-left: 15px;
+
+} */
+
+/* Remove the border from the very last item */
+.nav-links li:last-child {
+    border-right: none;
+}
