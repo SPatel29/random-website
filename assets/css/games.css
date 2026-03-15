@@ -12,20 +12,24 @@ td {
 
 .game-info {
     display: flex;
-    gap: 20px
+    gap: 20px;
+    align-items: flex-start;
+    margin: auto;
+    justify-content: center;
 }
 
 .game-info img {
-    width: 500px;
+    width: 20%;
     height: auto;
     flex-shrink: 0;
-    object-fit: cover;
     border-radius: 8px;
+    max-width: 500px;
 }
 
 .game-info p {
     flex: 1;
     min-width: 0;
+    max-width: 60%;
 }
 
 div {
@@ -40,7 +44,7 @@ div {
 }
 
 table {
-    width: 65%;
+    width: 100%;
 }
 
 .table-container {
@@ -59,7 +63,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
-    padding: 10px 20px;
+    /* padding: 1em 1em; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -88,7 +92,7 @@ h1 {
     
     */
     display: block;
-    padding: 15px 0;
+    padding: 1em 0;
     text-align: center;
     transition: transform 0.2s ease-in-out
         /* makes the nav bar link growth smooth */
@@ -127,3 +131,78 @@ nav a[aria-current="page"] {
 .nav-links li:last-child {
     border-right: none;
 }
+
+.nav-links li a {
+    font-size: 1.0rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .game-info img {
+        width: 85%;
+        margin-right: 1.2em;
+        margin-left: 1.2em;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: none;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    .game-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}
+
+/* You should use relative units like rem, em and % for responseive designs */
+/* Use pixels for fixed precision */
+
+/*
+    When to avoid pixels:
+    1. Use rem for font sizes. Scales with font size
+
+    2. Use % or vw for fluid layouts:
+       Hard coding a container with pxs will cause horizontal scrolling on smaller
+       mobile screens.
+
+    3. Use rem or em for padding and margins so spacing scales proportionally with the text
+       Using pixels for padding and margins can lead to cramped layouts when text scales
+       up but surrounding space doesn't
+*/
+
+
+/*
+    When to use pixels:
+
+    1. Use pixels for borders, relative units can result in blurry subpixel rendering
+       or borders that disapper at certain zoom levels
+    2. Max width limits: Use pixels for limiting how wide a container can get
+       on massive monitors to prevent lines from being too long
+    3. Small fixed elements: icons, logos or decorative graphics require exact
+       pixel alignment to stay sharp
+
+*/
