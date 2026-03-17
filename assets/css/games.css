@@ -63,7 +63,6 @@ h1 {
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
-    /* padding: 1em 1em; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -91,10 +90,14 @@ h1 {
         full width of it's parent <li>) clickable, not just the text
     
     */
-    display: block;
+    display: flex;
     padding: 1em 0;
     text-align: center;
-    transition: transform 0.2s ease-in-out
+    transition: transform 0.2s ease-in-out;
+    flex: 1;  /* Forces link to fill parent container (li) width/height */
+    align-items: center;
+    justify-content: center;
+    
         /* makes the nav bar link growth smooth */
 }
 
@@ -102,15 +105,26 @@ h1 {
 nav a[aria-current="page"] {
     color: #007bff;
     font-weight: bold;
-    border-bottom: 2px solid #007bff;
+    /* inset draws the line INSIDE the existing space, 
+    keeping height of all links identical regardless of which one is active*/
+    box-shadow: inset 0 -2px 0 0 #007bff; 
+    border-bottom: none;
+    /* z-index used to pop it to front on hover, so link doesn't overlap neighbors borders */
+    z-index: 10; 
 }
 
 .nav-links li {
     /* grow and fill avilable space equally, spreading across nav bar */
     flex: 1;
     /* force list items to be wide*/
-    display: inline-block;
+    display: flex;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li a {
+    position: relative; /* enable z-index */
+    z-index: 1; /* Set up base layer */
+    font-size: 1rem;
 }
 
 .nav-links li a:hover {
@@ -120,21 +134,12 @@ nav a[aria-current="page"] {
     font-weight: bold;
 }
 
-/* .nav-links li+li {
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
-    margin-left: 15px;
-    padding-left: 15px;
-
-} */
-
 /* Remove the border from the very last item */
 .nav-links li:last-child {
     border-right: none;
 }
 
-.nav-links li a {
-    font-size: 1.0rem;
-}
+ 
 
 h1 {
     font-size: 2.5rem;
