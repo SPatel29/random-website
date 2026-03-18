@@ -1,35 +1,16 @@
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
 table,
 th,
 td {
     border: 5px solid black;
-}
-
-.ranking,
-.game-title,
-.game-info {
-    text-align: center;
-}
-
-.game-info {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin: auto;
-    justify-content: center;
-}
-
-.game-info img {
-    width: 20%;
-    height: auto;
-    flex-shrink: 0;
-    border-radius: 8px;
-    max-width: 500px;
-}
-
-.game-info p {
-    flex: 1;
-    min-width: 0;
-    max-width: 60%;
 }
 
 div {
@@ -43,17 +24,38 @@ div {
     }
 }
 
-table {
-    width: 100%;
-}
-
 .table-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-h1 {
+
+.game-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+
+    img {
+        width: 20%;
+        height: auto;
+        flex-shrink: 0;
+        border-radius: 8px;
+        max-width: 500px;
+    }
+
+    p {
+        flex: 1;
+        min-width: 0;
+        max-width: 60%;
+    }
+}
+
+.ranking,
+.game-title {
     text-align: center;
 }
 
@@ -79,70 +81,64 @@ h1 {
     justify-content: space-between;
     width: 100%;
 
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    /* 
+    a {
+        text-decoration: none;
+        color: #333;
+        /* 
         by default, <a> tags are inline, so only their text is clickable
         block display makes the entire area of the <a> (including padding and 
         full width of it's parent <li>) clickable, not just the text
     
     */
-    display: flex;
-    padding: 1em 0;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-    flex: 1;  /* Forces link to fill parent container (li) width/height */
-    align-items: center;
-    justify-content: center;
-    
-        /* makes the nav bar link growth smooth */
-}
+        display: flex;
+        padding: 1em 0;
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+        flex: 1;
+        /* Forces link to fill parent container (li) width/height */
+        align-items: center;
+        justify-content: center;
 
+        /* makes the nav bar link growth smooth */
+    }
+
+    li {
+        /* grow and fill avilable space equally, spreading across nav bar */
+        flex: 1;
+        /* force list items to be wide*/
+        display: flex;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+        a:hover {
+            transform: scale(1.1);
+            /* increases size to 110% as you hover */
+            background-color: rgb(211, 211, 211);
+            font-weight: bold;
+        }
+
+        :last-child {
+            border-right: none;
+        }
+    }
+
+    li a {
+        position: relative;
+        /* enable z-index */
+        z-index: 1;
+        /* Set up base layer */
+        font-size: 1rem;
+    }
+}
 
 nav a[aria-current="page"] {
     color: #007bff;
     font-weight: bold;
     /* inset draws the line INSIDE the existing space, 
     keeping height of all links identical regardless of which one is active*/
-    box-shadow: inset 0 -2px 0 0 #007bff; 
+    box-shadow: inset 0 -2px 0 0 #007bff;
     border-bottom: none;
     /* z-index used to pop it to front on hover, so link doesn't overlap neighbors borders */
-    z-index: 10; 
-}
-
-.nav-links li {
-    /* grow and fill avilable space equally, spreading across nav bar */
-    flex: 1;
-    /* force list items to be wide*/
-    display: flex;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.nav-links li a {
-    position: relative; /* enable z-index */
-    z-index: 1; /* Set up base layer */
-    font-size: 1rem;
-}
-
-.nav-links li a:hover {
-    transform: scale(1.1);
-    /* increases size to 110% as you hover */
-    background-color: rgb(211, 211, 211);
-    font-weight: bold;
-}
-
-/* Remove the border from the very last item */
-.nav-links li:last-child {
-    border-right: none;
-}
-
- 
-
-h1 {
-    font-size: 2.5rem;
+    z-index: 10;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -165,6 +161,7 @@ h1 {
     .nav-links li:last-child {
         border-bottom: none;
     }
+
     .game-info {
         display: flex;
         flex-direction: column;
