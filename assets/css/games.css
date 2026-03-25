@@ -92,7 +92,7 @@ div {
     
     */
         display: flex;
-        padding: 1em 0;
+        padding: 1em 1em;
         text-align: center;
         transition: transform 0.2s ease-in-out;
         flex: 1;
@@ -109,6 +109,7 @@ div {
         /* force list items to be wide*/
         display: flex;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
+        overflow: hidden;
 
         a:hover {
             transform: scale(1.1);
@@ -120,14 +121,14 @@ div {
         :last-child {
             border-right: none;
         }
-    }
 
-    li a {
-        position: relative;
-        /* enable z-index */
-        z-index: 1;
-        /* Set up base layer */
-        font-size: 1rem;
+        a {
+            position: relative;
+            /* enable z-index */
+            z-index: 1;
+            /* Set up base layer */
+            font-size: 1rem;
+        }
     }
 }
 
