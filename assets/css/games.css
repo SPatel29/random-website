@@ -16,11 +16,7 @@ td {
 
 div {
     img {
-        margin: 0 0 1% 1%
-    }
-
-    p {
-        margin: 0 1% 0 0
+        margin: 0 0 1em 1em
     }
 }
 
@@ -28,30 +24,32 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: fit-content;
+    margin: auto;
 }
+
 
 
 .game-info {
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin: auto;
-    justify-content: center;
-    text-align: center;
+    gap: 2rem; /* Clear, intentional spacing */
+    align-items: center; /* Usually looks better for text/image pairs */
+    max-width: 1000px; /* Optional: Constrain the whole block, not individual items */
+    margin: 0 auto;
 
     img {
-        width: 20%;
+        flex: 0 0 200px; /* Use a base width instead of a percentage */
+        width: 100%; /* Fill that base width */
         height: auto;
-        flex-shrink: 0;
         border-radius: 8px;
-        max-width: 500px;
+        object-fit: cover;
     }
 
     p {
-        flex: 1;
-        min-width: 0;
-        max-width: 60%;
-        margin: 0 0 1em 0
+        flex: 1; /* Automatically takes the remaining space */
+        min-width: 250px; /* Prevents text from getting too skinny on mobile */
+        margin: 0 0 2em 0;
+        text-align: left; /* Easier to read for long descriptions */
     }
 }
 
