@@ -30,7 +30,7 @@ div {
 
 
 
-.game-info {
+.info {
     display: flex;
     gap: 2rem; /* Clear, intentional spacing */
     align-items: center; /* Usually looks better for text/image pairs */
@@ -54,7 +54,7 @@ div {
 }
 
 .ranking,
-.game-title {
+.title {
     text-align: center;
 }
 
@@ -160,7 +160,7 @@ nav a[aria-current="page"] {
 }
 
 @media only screen and (max-width: 800px) {
-    .game-info {
+    .info {
         display: flex;
         flex-direction: column;
         align-items: center;
